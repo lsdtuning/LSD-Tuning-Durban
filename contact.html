@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - LSD Tuning Durban</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script>
+    // JavaScript validation function
+    function validateForm(event) {
+      // Get form fields
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const enquiry = document.getElementById("enquiry").value.trim();
+
+      // Check for empty critical fields
+      if (!name || !email || !enquiry) {
+        alert("Please fill in all required fields: Name, Email, and Enquiry.");
+        event.preventDefault(); // Prevent form submission
+        return false;
+      }
+
+      // Basic email format validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault(); // Prevent form submission
+        return false;
+      }
+
+      // If validation passes, proceed with mailto
+      return true;
+    }
+
+    // Clear input field when clicked
+    function clearField(input) {
+      if (input.value === input.defaultValue) {
+        input.value = "";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo"/> 
+  </div>
+  <div class="subheading">
+    <h1>LSD TUNING DURBAN</h1>
+    <h3>CREATE | INSPIRE | ACHIEVE</h3>
+  </div>
+  <div class="menu">
+    <a href="lsdtuningdbn.html">Home</a> | 
+    <a href="services.html">Services</a> | 
+    <a href="about.html">About</a> | 
+    <a href="booking.html">Booking</a> | 
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="main">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or inquiries, please fill out the form below:</p>
+
+  <form action="mailto:info@lsdtuningdurban.co.za" method="POST" onsubmit="return validateForm(event);">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" value="Your Name" onclick="clearField(this);" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" value="Your Email" onclick="clearField(this);" required><br><br>
+
+    <label for="enquiry">Enquiry:</label><br>
+    <textarea id="enquiry" name="enquiry" rows="6" placeholder="What would you like to know?" onclick="clearField(this);" required></textarea><br><br>
+
+    <input type="submit" value="Send Message">
+  </form>
+</div>
+
+<div class="footer">
+  <p>&copy; <span id="year"></span> - LSD Tuning Durban | Let's Get in Touch</p>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

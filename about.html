@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">  
+  <title>LSD Tuning Parts Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 200px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .hidden {
+      display: none;
+    }
+    #back-btn {
+      margin: 1rem auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo" />
+    </div>
+    <div class="subheading">
+      <h1>LSD TUNING DURBAN</h1>
+      <h3>CREATE | INSPIRE | ACHIEVE</h3>
+    </div>
+    <div class="menu">
+      <a href="lsdtuningdbn.html">Home</a> | 
+      <a href="services.html">Services</a> | 
+      <a href="about.html">About</a> | 
+      <a href="booking.html">Booking</a> | 
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>LSD TUNING DURBAN</h1>
+    <h3 style="text-align:center;">CREATE | INSPIRE | ACHIEVE</h3>
+
+    <button id="back-btn" onclick="goBack()">← Back</button>
+
+    <div id="brand-selection">
+      <h2>Select Your Brand</h2>
+      <div class="grid">
+        <div class="card" onclick="selectBrand('VW')"><h3>Volkswagen</h3></div>
+        <div class="card" onclick="selectBrand('Audi')"><h3>Audi</h3></div>
+      </div>
+    </div>
+
+    <div id="model-selection" class="hidden">
+      <h2>Select Model</h2>
+      <div class="grid" id="model-grid"></div>
+    </div>
+
+    <div id="year-selection" class="hidden">
+      <h2>Select Year</h2>
+      <div class="grid" id="year-grid"></div>
+    </div>
+
+    <div id="engine-selection" class="hidden">
+      <h2>Select Engine</h2>
+      <div class="grid" id="engine-grid"></div>
+    </div>
+
+    <div id="parts-display" class="hidden">
+      <h2>Available Parts</h2>
+      <div class="grid" id="parts-grid"></div>
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      VW: {
+        Golf: {
+          "2015": {
+            GTI: ["Intake Kit", "Downpipe", "Stage 2 Tune"],
+            R: ["Turbo Upgrade", "Intercooler", "Stage 3 Tune"]
+          }
+        },
+        Polo: {
+          "2018": {
+            GTI: ["Cold Air Intake", "Remap", "Strut Brace"]
+          }
+        }
+      },
+      Audi: {
+        A3: {
+          "2016": {
+            "2.0 TFSI": ["Exhaust", "Coilovers", "Tune"],
+            "1.4 TFSI": ["Stage 1 Tune", "Blow-off Valve"]
+          }
+        }
+      }
+    };
+
+    const steps = ['brand', 'model', 'year', 'engine', 'parts'];
+    let currentStep = 0;
+    let selection = {};
+
+    function showStep(stepIndex) {
+      document.getElementById('back-btn').style.display = stepIndex > 0 ? 'block' : 'none';
+
+      steps.forEach(step => {
+        const id = step === 'parts' ? 'parts-display' : `${step}-selection`;
+        const section = document.getElementById(id);
+        if (section) section.classList.add('hidden');
+      });
+
+      const currentId = steps[stepIndex] === 'parts' ? 'parts-display' : `${steps[stepIndex]}-selection`;
+      document.getElementById(currentId).classList.remove('hidden');
+      currentStep = stepIndex;
+    }
+
+    function goBack() {
+      if (currentStep > 0) {
+        currentStep--;
+        if (currentStep === 0) showStep(0);
+        else if (currentStep === 1) selectBrand(selection.brand);
+        else if (currentStep === 2) selectModel(selection.model);
+        else if (currentStep === 3) selectYear(selection.year);
+      }
+    }
+
+    function selectBrand(brand) {
+      selection.brand = brand;
+      const models = Object.keys(data[brand]);
+      const grid = document.getElementById('model-grid');
+      grid.innerHTML = '';
+      models.forEach(model => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${model}</h3>`;
+        card.onclick = () => selectModel(model);
+        grid.appendChild(card);
+      });
+      showStep(1);
+    }
+
+    function selectModel(model) {
+      selection.model = model;
+      const years = Object.keys(data[selection.brand][model]);
+      const grid = document.getElementById('year-grid');
+      grid.innerHTML = '';
+      years.forEach(year => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${year}</h3>`;
+        card.onclick = () => selectYear(year);
+        grid.appendChild(card);
+      });
+      showStep(2);
+    }
+
+    function selectYear(year) {
+      selection.year = year;
+      const engines = Object.keys(data[selection.brand][selection.model][year]);
+      const grid = document.getElementById('engine-grid');
+      grid.innerHTML = '';
+      engines.forEach(engine => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${engine}</h3>`;
+        card.onclick = () => selectEngine(engine);
+        grid.appendChild(card);
+      });
+      showStep(3);
+    }
+
+    function selectEngine(engine) {
+      selection.engine = engine;
+      const parts = data[selection.brand][selection.model][selection.year][engine];
+      const grid = document.getElementById('parts-grid');
+      grid.innerHTML = '';
+      parts.forEach(part => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<h3>${part}</h3><button onclick="alert('Order placed for ${part}')">Order</button>`;
+        grid.appendChild(card);
+      });
+      showStep(4);
+    }
+  </script>
+</body>
+</html>

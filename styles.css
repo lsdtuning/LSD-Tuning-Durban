@@ -1,0 +1,458 @@
+.vag-coding-text {
+  margin-top: 4.125rem; /* try 1rem to start, tweak as needed */
+}
+
+.video-container {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #000; /* Adds black bars like letterboxing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Keeps natural shape without distortion */
+}
+
+
+.service-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.service-card {
+  background-color: #f0f8ff;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Make main body text centered */
+.main {
+  text-align: center;
+}
+
+.newsletter-btn {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background-color: #00bbff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #0066ff;
+}
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* picture */
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.centered-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 100px; 
+}
+
+/* Button */
+.button {
+  display: inline-block; 
+  padding: 10px 20px;
+  background-color: skyblue; /* Button background color */
+  color: black; /* Text color */
+  text-decoration: none; 
+  border: 2px solid black; 
+  border-radius: 5px;
+  font-size: 16px; 
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.button:hover {
+  background-color: black; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+
+/* Header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header .logo img {
+  height: 80px;
+  margin-left: 10px;
+}
+
+.subheading {
+  flex: 1;
+  text-align: center;
+}
+
+.subheading h1 {
+  font-size: 2.5rem;
+  color: #00bfff; /* Sky blue */
+}
+
+.subheading h3 {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.menu {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #00bfff; /* Sky blue */
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+/* Main content */
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-heading h1 {
+  font-size: 2rem;
+  color: #00bfff; /* Sky blue */
+  border-bottom: 2px solid #00bfff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="tel"],
+.booking-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.booking-form input[type="submit"] {
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  max-width: 200px;
+}
+
+.booking-form input[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Image styling */
+.logo img {
+  margin: 20px;
+  border-radius: 5px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+.footer p {
+  color: #aaa;
+}
+
+/* Media Query */
+
+@media (0px <= width <= 960px) {
+  body {
+    background: #ccc;
+    font-family: 'Times New Roman', Times, serif;
+  }
+}
+
+/* Adjustments for screens smaller than 960px */
+@media only screen and (max-width: 960px) {
+  /* General styles for all pages */
+  .header {
+      padding: 1rem;
+      text-align: center;
+  }
+
+  .logo img {
+      max-width: 100px; /* Scale the logo down */
+      margin-bottom: 1rem;
+  }
+
+  .subheading h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+  }
+
+  .subheading h3 {
+      font-size: 1.1rem;
+  }
+
+  .menu a {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+      background-color: #00AEEF; /* Light blue for mobile */
+      color: #fff;
+      border-radius: 5px;
+  }
+
+  .menu a:hover {
+      background-color: #007BB5;
+  }
+
+  .main {
+      padding: 1.5rem;
+      text-align: center;
+  }
+
+  .centered-image {
+      width: 90%;
+      margin: 0 auto 1.5rem;
+  }
+
+  .footer {
+      padding: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+  }
+
+  /* Specific adjustments for Booking and Contact pages */
+  .booking-form, form {
+      width: 100%; /* Full-width form fields */
+      padding: 1rem;
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%; /* Full-width input fields for smaller screens */
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+  }
+
+  input[type="submit"] {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+  }
+
+  /* Specific adjustments for About page */
+  .about p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+  }
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Form Container Styling */
+form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Input and Select Styling */
+form label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border: 1px solid #0056b3; /* Light blue focus color */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+/* Button Styling */
+form input[type="submit"] {
+  background-color: #0056b3; /* Blue for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #003f7f; /* Darker blue on hover */
+}
+
+/* Form Header Styling */
+form h2 {
+  color: #0056b3; /* Blue for headings */
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Textarea Styling */
+form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+
+
+
