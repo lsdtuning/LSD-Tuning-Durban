@@ -4,26 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book with Us - LSD Tuning Durban</title>
-  <meta name="description" content="Book a service with LSD Tuning Durban for high-performance automotive upgrades.">
+  <meta name="description" content="Book a service with LSD Tuning Durban for high-performance VW & Audi tuning, diagnostics, and repairs.">
+  <meta name="keywords" content="VW, Audi, diagnostics, tuning, ECU remap, performance, mobile diagnostics, Durban mechanics, LSD Tuning Durban">
+  <meta name="author" content="LSD Tuning Durban">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book a Service | LSD Tuning Durban">
+  <meta property="og:description" content="High-performance VW & Audi tuning and repairs. Book a service with us today.">
+  <meta property="og:image" content="images/lsd_tuning.jpg">
+  <meta property="og:url" content="https://lsdtuningdbn.com/booking.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a Service | LSD Tuning Durban">
+  <meta name="twitter:description" content="Book vehicle services with LSD Tuning Durban - ECU tuning, performance upgrades, diagnostics and more.">
+  <meta name="twitter:image" content="images/lsd_tuning.jpg">
+
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/lsd_tuning.jpg">
+
   <style>
-    .booking-form { max-width: 600px; margin: auto; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
-    label { font-weight: bold; }
-    input, select { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; }
-    .button, .whatsapp-button {
-      display: inline-block; padding: 10px 20px; background: #28a745; color: white; text-decoration: none;
-      border-radius: 8px; font-weight: bold; transition: 0.3s;
+    .booking-form {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 12px;
     }
-    .button:hover, .whatsapp-button:hover { background: #218838; }
-    .whatsapp-button { background-color: #25d366; margin-top: 1rem; }
-    .divider { margin: 2rem 0; text-align: center; font-weight: bold; }
+    label {
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .form-button {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #25d366;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .form-button:hover {
+      background: #1ebe5d;
+    }
+    .divider {
+      margin: 2rem 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: -15px;
+      margin-bottom: 10px;
+    }
+    .whatsapp-button {
+      padding: 10px 20px;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .whatsapp-button:hover {
+      background: #1ebe5d;
+    }
   </style>
 </head>
 
 <body>
   <div class="header">
     <div class="logo">
-      <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo"/>
+      <img src="images/lsd_tuning.jpg" alt="LSD Tuning Durban Logo"/>
     </div>
     <div class="subheading">
       <h1>LSD TUNING DURBAN</h1>
@@ -32,25 +99,38 @@
     <div class="menu">
       <a href="index.html">Home</a> | 
       <a href="services.html">Services</a> | 
-      <a href="parts.html">About</a> | 
+      <a href="parts.html">Parts</a> | 
       <a href="booking.html">Booking</a> | 
       <a href="contact.html">Contact</a>
     </div>
   </div>
 
+  <!-- Preferred Method Selector -->
+  <div style="margin: 20px auto; text-align: center;">
+    <label for="booking-method" style="font-weight: bold; font-size: 1rem;">Choose Booking Method:</label><br />
+    <select id="booking-method" onchange="toggleBookingMethod()" style="margin-top: 10px; padding: 10px; border-radius: 10px; border: 1px solid #ccc; font-size: 1rem; width: 220px;">
+      <option value="email">📧 Email</option>
+      <option value="whatsapp">📲 WhatsApp</option>
+    </select>
+  </div>
+  
+
   <div class="main">
-    <h2>Book a Service with Us</h2>
-    <p>Ready to take your vehicle to the next level? Use the form below or WhatsApp us to book a service with LSD Tuning Durban.</p>
+    <h2 style="text-align: center;">Book a Service with Us</h2>
+    <p style="text-align: center;">Ready to take your vehicle to the next level? Fill out the form below and we'll confirm your booking. You can also WhatsApp us directly!</p>
 
     <form class="booking-form" id="bookingForm">
       <label for="name">Name:</label>
-      <input type="text" id="name" required>
-
+      <input type="text" id="name" name="name" autocomplete="name" required>
+      <div class="error" id="errorName"></div>
+    
       <label for="email">Email:</label>
-      <input type="email" id="email" required>
-
+      <input type="email" id="email" name="email" autocomplete="email" required>
+      <div class="error" id="errorEmail"></div>
+    
       <label for="service">Select Service:</label>
-      <select id="service" required>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Select a service</option>
         <option value="Vehicle Diagnostics">Vehicle Diagnostics</option>
         <option value="VAG Coding">VAG Coding</option>
         <option value="Major Service">Major Service</option>
@@ -62,18 +142,21 @@
         <option value="Turbo Installations">Turbo Installations</option>
         <option value="Mobile Diagnostics (LSD on the Move)">Mobile Diagnostics (LSD on the Move)</option>
       </select>
-
+      <div class="error" id="errorService"></div>
+    
       <label for="date">Preferred Date:</label>
-      <input type="date" id="date" required>
-
-      <input type="submit" value="Submit Booking" class="button">
+      <input type="date" id="date" name="date" required>
+      <div class="error" id="errorDate"></div>
+    
+      <div id="booking-buttons" style="position: relative; text-align: center;">
+        <button id="emailButton" type="submit" class="form-button" style="width: 100%;">📧 Send Booking via Email</button>
+        <a id="whatsappLink" href="#" target="_blank" class="form-button" style="width: 100%; display: none;">📲 Send Booking via WhatsApp</a>
+      </div>
     </form>
+    
+    
 
-    <a id="whatsappLink" href="#" target="_blank" class="whatsapp-button" style="display:none;">
-      📲 Send Booking via WhatsApp
-    </a>
-
-    <div class="divider">or</div>
+    <div class="divider">OR</div>
 
     <p style="text-align: center;">
       Prefer Google? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeExampleURL/viewform" target="_blank">Book via Google Form</a>
@@ -83,9 +166,7 @@
   <div class="footer">
     <footer>
       <p>&copy; <span id="year"></span> LSD Tuning Durban. All Rights Reserved.</p>
-      <a href="https://forms.gle/baUaYiXDTPqDgHNa6"
-         target="_blank"
-         class="newsletter-btn">
+      <a href="https://forms.gle/baUaYiXDTPqDgHNa6" target="_blank" class="newsletter-btn">
         📬 Subscribe to Our Newsletter
       </a>
     </footer>
@@ -94,24 +175,81 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const form = document.getElementById("bookingForm");
-    const whatsappLink = document.getElementById("whatsappLink");
+    function toggleBookingMethod() {
+      const method = document.getElementById("booking-method").value;
+      const emailBtn = document.getElementById("emailButton");
+      const whatsappBtn = document.getElementById("whatsappLink");
 
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
+      if (method === "email") {
+        emailBtn.style.display = "inline-block";
+        whatsappBtn.style.display = "none";
+      } else {
+        emailBtn.style.display = "none";
+        whatsappBtn.style.display = "inline-block";
+      }
+    }
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const service = document.getElementById("service").value;
-      const date = document.getElementById("date").value;
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  const method = document.getElementById("booking-method").value;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const service = document.getElementById("service").value;
+  const date = document.getElementById("date").value;
 
-      const message = `Hi, I'd like to book a service with LSD Tuning.%0A%0AName: ${name}%0AEmail: ${email}%0AService: ${service}%0APreferred Date: ${date}`;
-      const url = `https://wa.me/27718305852?text=${message}`;
+  let hasError = false;
+  document.querySelectorAll(".error").forEach(el => el.textContent = '');
 
-      whatsappLink.href = url;
-      whatsappLink.style.display = "inline-block";
-      whatsappLink.scrollIntoView({ behavior: 'smooth' });
-    });
+  if (!name) {
+    document.getElementById("errorName").textContent = "Name is required.";
+    hasError = true;
+  }
+  if (!email || !email.includes("@")) {
+    document.getElementById("errorEmail").textContent = "Valid email is required.";
+    hasError = true;
+  }
+  if (!service) {
+    document.getElementById("errorService").textContent = "Please select a service.";
+    hasError = true;
+  }
+  if (!date) {
+    document.getElementById("errorDate").textContent = "Preferred date is required.";
+    hasError = true;
+  }
+
+  if (hasError) {
+    event.preventDefault();
+    return;
+  }
+
+  if (method === "whatsapp") {
+    const message = `Hi, I'd like to book a service with LSD Tuning.%0A%0AName: ${name}%0AEmail: ${email}%0AService: ${service}%0APreferred Date: ${date}`;
+    const url = `https://wa.me/27718305852?text=${message}`;
+    document.getElementById("whatsappLink").href = url;
+    event.preventDefault();
+    document.getElementById("whatsappLink").click();
+  } else {
+    // Send the form via email using FormSubmit
+    this.setAttribute('action', 'https://formsubmit.co/lsdtuning7@gmail.com');
+    this.setAttribute('method', 'POST');
+    this.submit();
+  }
+});
+
+
+    window.onload = function () {
+      toggleBookingMethod();
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedService = urlParams.get('service');
+      if (selectedService) {
+        const dropdown = document.getElementById("service");
+        for (let option of dropdown.options) {
+          if (option.text.toLowerCase() === selectedService.toLowerCase()) {
+            dropdown.value = option.value;
+            break;
+          }
+        }
+      }
+    };
   </script>
 </body>
 </html>

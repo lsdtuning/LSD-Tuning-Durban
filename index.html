@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LSD Tuning Durban - Home</title>
-  <meta name="description" content="Welcome to LSD Tuning Durban! Specializing in high-performance upgrades, diagnostics, and tuning. Transform your vehicle today!">
-  <link rel="stylesheet" href="styles.css">  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSD Tuning Durban | VW & Audi Tuning | Performance Upgrades</title>
+
+  <meta name="description" content="LSD Tuning Durban - Your go-to for high-performance VW & Audi upgrades, diagnostics, and custom tuning. Transform your car today.">
+  <meta name="keywords" content="VW tuning Durban, Audi tuning, performance upgrades, LSD Tuning, ECU remapping, vehicle diagnostics, Durban automotive tuning">
+  <meta name="author" content="LSD Tuning Durban">
+  <meta property="og:title" content="LSD Tuning Durban | Create. Inspire. Achieve.">
+  <meta property="og:description" content="High-performance tuning and upgrades for VW & Audi vehicles. Engine diagnostics, remaps, and mobile services available.">
+  <meta property="og:image" content="images/lsd_tuning.jpg">
+  <meta property="og:url" content="https://lsdtuningdbn.com">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -20,45 +29,113 @@
   <div class="menu">
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
-    <a href="parts.html">About</a> | 
+    <a href="parts.html">Parts</a> | 
     <a href="booking.html">Booking</a> | 
     <a href="contact.html">Contact</a>
   </div>
 </div>
 
 <div class="main">
-    <div class="image-container">
-        <img src="images/lsd_tuning3.jpeg" alt="LSD Tuning Performance Upgrade Vehicle" class="centered-image">
+  <div class="image-container">
+    <img src="images/lsd_tuning3.jpeg" alt="LSD Tuning Performance Upgrade Vehicle" class="centered-image" />
+    <h2>Welcome to LSD Tuning Durban</h2>
+    <p>Your one-stop solution for vehicle upgrades, diagnostics, and tuning. At LSD Tuning Durban, we pride ourselves on delivering cutting-edge automotive services, ensuring that every vehicle we touch reaches its full potential.</p>
 
-        <h2>Welcome to LSD Tuning Durban</h2>
-        <p>Your one-stop solution for vehicle upgrades, diagnostics, and tuning. At LSD Tuning Durban, we pride ourselves on delivering cutting-edge automotive services, ensuring that every vehicle we touch reaches its full potential.</p>
+    <p>LSD Tuning was founded in 2013 by the late visionary, Vernon Govender, who turned his passion for cars into a business that thrives on performance excellence. Though Vernon has passed on, his legacy continues to fuel our dedication to creating exceptional automotive experiences. His philosophy of "Create, Inspire, Achieve" remains the core of what we do.</p>
 
-        <p>LSD Tuning was founded in 2013 by the late visionary, Vernon Govender, who turned his passion for cars into a business that thrives on performance excellence. Though Vernon has passed on, his legacy continues to fuel our dedication to creating exceptional automotive experiences. His philosophy of "Create, Inspire, Achieve" remains the core of what we do.</p>
+    <p>We offer a wide range of services, including <a href="services.html">performance upgrades</a>, <a href="services.html">engine tuning</a>, and <a href="services.html">comprehensive vehicle diagnostics</a>. Our expert team ensures that your vehicle runs at its best—whether it's for the track or the street.</p>
 
-        <p>We offer a wide range of services, including <a href="services.html">performance upgrades</a>, <a href="services.html">engine tuning</a>, and <a href="services.html">comprehensive vehicle diagnostics</a>. Our expert team ensures that your vehicle runs at its best—whether it's for the track or the street.</p>
-        
-        <p><strong>Come visit us at 254 Newcentre Drive, Newlands West, Durban and let us help you transform your car into the machine of your dreams!</strong></p>
+    <p><strong>Come visit us at 254 Newcentre Drive, Newlands West, Durban and let us help you transform your car into the machine of your dreams!</strong></p>
 
-        <a href="services.html" class="button">Explore Our Services</a>
-    </div>
+    <a href="services.html" class="button">Explore Our Services</a>
+  </div>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-
   <footer>
     <p>&copy; <span id="year"></span> LSD Tuning Durban. All Rights Reserved.</p>
-    <a href="https://forms.gle/baUaYiXDTPqDgHNa6"
-       target="_blank"
-       class="newsletter-btn">
+    <a href="#" onclick="showNewsletterModal()" class="newsletter-btn">
       📬 Subscribe to Our Newsletter
     </a>
   </footer>
- 
 </div>
 
+<!-- Newsletter Modal -->
+<div id="newsletter-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.6); z-index:999; justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:12px; width:90%; max-width:400px;">
+    <h3>Subscribe to Updates</h3>
+    <form id="newsletter-form">
+      <label><input type="checkbox" id="emailCheck"> Notify via Email</label><br>
+      <label><input type="checkbox" id="whatsappCheck"> Notify via WhatsApp</label><br><br>
 
+      <input type="email" id="emailField" placeholder="Enter your email" style="display:none; width:100%; padding:8px; margin-bottom:10px;"><br>
+      <input type="tel" id="phoneField" placeholder="Enter your WhatsApp number" style="display:none; width:100%; padding:8px; margin-bottom:10px;"><br>
+
+      <button type="submit" class="form-button">Subscribe</button>
+      <p id="subscribe-msg" style="color:green;"></p>
+    </form>
+    <button onclick="closeNewsletterModal()" style="margin-top:10px;">Close</button>
+  </div>
+</div>
+
+<!-- Scripts -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  function showNewsletterModal() {
+    document.getElementById("newsletter-modal").style.display = "flex";
+  }
+
+  function closeNewsletterModal() {
+    document.getElementById("newsletter-modal").style.display = "none";
+  }
+
+  document.getElementById("emailCheck").addEventListener("change", function () {
+    document.getElementById("emailField").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("whatsappCheck").addEventListener("change", function () {
+    document.getElementById("phoneField").style.display = this.checked ? "block" : "none";
+  });
+
+  document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("emailField").value;
+    const phone = document.getElementById("phoneField").value;
+    const emailChecked = document.getElementById("emailCheck").checked;
+    const whatsappChecked = document.getElementById("whatsappCheck").checked;
+
+    if (!emailChecked && !whatsappChecked) {
+      alert("Please choose at least one notification method.");
+      return;
+    }
+
+    // Use FormSubmit (or replace with your backend or Google Sheets integration)
+    fetch("https://formsubmit.co/ajax/lsdtuning7@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        phone: phone,
+        message: "New newsletter subscriber from LSD Tuning homepage"
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("subscribe-msg").innerText = "You're subscribed! ✅";
+
+      if (whatsappChecked && phone) {
+        const text = `Hi! You've been subscribed to LSD Tuning specials and updates. Stay tuned! 🚗🔥`;
+        window.open(`https://wa.me/${phone.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`, '_blank');
+      }
+    })
+    .catch(error => {
+      console.error("Subscription failed", error);
+      alert("Something went wrong. Please try again.");
+    });
+  });
 </script>
 
 </body>

@@ -57,124 +57,18 @@
   <div class="menu">
     <a href="index.html">Home</a> | 
     <a href="services.html">Services</a> | 
-    <a href="parts.html">About</a> | 
+    <a href="parts.html">Parts</a> | 
     <a href="booking.html">Booking</a> | 
     <a href="contact.html">Contact</a>
   </div>
 </div>
 
-<div class="main">
-  <h2>Vehicle Parts Catalogue</h2>
-  <p>Start by selecting your brand below to see what parts are available:</p>
-
-  <div class="step-selector">
-    <label for="brandSelect">Step 1: Choose your brand</label>
-    <select id="brandSelect">
-      <option value="">-- Select Brand --</option>
-      <option value="Volkswagen">Volkswagen</option>
-      <option value="Audi">Audi</option>
-    </select>
-
-    <label for="modelSelect">Step 2: Choose your model</label>
-    <select id="modelSelect" disabled>
-      <option value="">-- Select Model --</option>
-    </select>
-
-    <label for="engineSelect">Step 3: Choose your engine</label>
-    <select id="engineSelect" disabled>
-      <option value="">-- Select Engine --</option>
-    </select>
-  </div>
-
-  <div id="parts-container"></div>
+<div class="main" style="text-align: center; padding: 100px 20px;">
+  <h2>🚧 Parts Catalogue Coming Soon 🚧</h2>
+  <p>We're currently building something amazing here. Please check back soon!</p>
+  <img src="images/under_construction.jpeg" alt="Under Construction" style="max-width: 300px; margin-top: 20px;">
 </div>
 
-<div class="footer">
-  <footer>
-    <p>&copy; <span id="year"></span> LSD Tuning Durban. All Rights Reserved.</p>
-    <a href="https://forms.gle/baUaYiXDTPqDgHNa6"
-       target="_blank"
-       class="newsletter-btn">
-      📬 Subscribe to Our Newsletter
-    </a>
-    <p>&copy; <span id="year"></span> - LSD Tuning Durban | Driven By Excellence</p>
-  <p>
-    📞 <a href="https://wa.me/27718305852" target="_blank">071 830 5852 (WhatsApp)</a><br>
-    📍 <a href="https://facebook.com/LSDTuningDurban" target="_blank">LSD Tuning Durban – Facebook</a><br>
-    📸 <a href="https://instagram.com/lsdtuningdbn" target="_blank">@lsdtuningdbn – Instagram</a>
-  </p>
-  </footer>
-</div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  const vehicleParts = [
-    {
-      brand: "Volkswagen",
-      model: "Golf GTI",
-      engine: "2.0 TSI",
-      part_name: "APR Intake Kit",
-      price: "R4,500",
-      image: "https://www.vagcafe.com/wp-content/uploads/2021/10/FMINDMK7_Replacement_Filter_foam.jpg",
-      product_link: "https://vagcafe.com/product/apr-intake-golf-gti/"
-    },
-    {
-      brand: "Volkswagen",
-      model: "Polo GTI",
-      engine: "1.8 TSI",
-      part_name: "Downpipe Kit",
-      price: "R3,800",
-      image: "https://www.vagcafe.com/wp-content/uploads/2021/10/OPF-delete-downpipe.jpg",
-      product_link: "https://vagcafe.com/product/downpipe-polo-gti/"
-    }
-  ];
-
-  const brandSelect = document.getElementById("brandSelect");
-  const modelSelect = document.getElementById("modelSelect");
-  const engineSelect = document.getElementById("engineSelect");
-  const container = document.getElementById("parts-container");
-
-  brandSelect.addEventListener("change", () => {
-    const selectedBrand = brandSelect.value;
-    const models = [...new Set(vehicleParts.filter(p => p.brand === selectedBrand).map(p => p.model))];
-    modelSelect.innerHTML = '<option value="">-- Select Model --</option>' + models.map(model => `<option value="${model}">${model}</option>`).join("");
-    modelSelect.disabled = false;
-    engineSelect.innerHTML = '<option value="">-- Select Engine --</option>';
-    engineSelect.disabled = true;
-    container.innerHTML = "";
-  });
-
-  modelSelect.addEventListener("change", () => {
-    const selectedBrand = brandSelect.value;
-    const selectedModel = modelSelect.value;
-    const engines = [...new Set(vehicleParts.filter(p => p.brand === selectedBrand && p.model === selectedModel).map(p => p.engine))];
-    engineSelect.innerHTML = '<option value="">-- Select Engine --</option>' + engines.map(engine => `<option value="${engine}">${engine}</option>`).join("");
-    engineSelect.disabled = false;
-    container.innerHTML = "";
-  });
-
-  engineSelect.addEventListener("change", () => {
-    const brand = brandSelect.value;
-    const model = modelSelect.value;
-    const engine = engineSelect.value;
-    const filteredParts = vehicleParts.filter(p => p.brand === brand && p.model === model && p.engine === engine);
-    container.innerHTML = filteredParts.map(part => `
-      <div class="part-card">
-        <h3>${part.part_name}</h3>
-        <p><strong>Brand:</strong> ${part.brand}</p>
-        <p><strong>Model:</strong> ${part.model}</p>
-        <p><strong>Engine:</strong> ${part.engine}</p>
-        <p><strong>Price:</strong> ${part.price}</p>
-        <img src="${part.image}" alt="${part.part_name}" style="max-width:100%; border-radius:8px; margin-top:10px;" />
-        <br><br>
-        <a href="${part.product_link}" target="_blank">View Product</a>
-        <br><br>
-        <a class="whatsapp-button" href="https://wa.me/27718305852?text=Hi%20LSD%20Tuning%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(part.part_name)}%20for%20${encodeURIComponent(part.brand)}%20${encodeURIComponent(part.model)}%20(${encodeURIComponent(part.engine)})." target="_blank">Order via WhatsApp</a>
-      </div>
-    `).join("");
-  });
-</script>
 
 </body>
 </html>
