@@ -1,67 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book with Us - LSD Tuning Durban</title>
-  <meta name="description" content="Book a service with LSD Tuning Durban for high-performance automotive upgrades. Fill out our booking form to get started!">
-  <link rel="stylesheet" href="styles.css"> 
+  <meta name="description" content="Book a service with LSD Tuning Durban for high-performance automotive upgrades.">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .booking-form { max-width: 600px; margin: auto; padding: 2rem; background: #f9f9f9; border-radius: 12px; }
+    label { font-weight: bold; }
+    input, select { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; }
+    .button, .whatsapp-button {
+      display: inline-block; padding: 10px 20px; background: #28a745; color: white; text-decoration: none;
+      border-radius: 8px; font-weight: bold; transition: 0.3s;
+    }
+    .button:hover, .whatsapp-button:hover { background: #218838; }
+    .whatsapp-button { background-color: #25d366; margin-top: 1rem; }
+    .divider { margin: 2rem 0; text-align: center; font-weight: bold; }
+  </style>
 </head>
+
 <body>
-
-<div class="header">
-  <div class="logo">
-    <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo"/> 
+  <div class="header">
+    <div class="logo">
+      <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo"/>
+    </div>
+    <div class="subheading">
+      <h1>LSD TUNING DURBAN</h1>
+      <h3>CREATE | INSPIRE | ACHIEVE</h3>
+    </div>
+    <div class="menu">
+      <a href="lsdtuningdbn.html">Home</a> | 
+      <a href="services.html">Services</a> | 
+      <a href="about.html">About</a> | 
+      <a href="booking.html">Booking</a> | 
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
-  <div class="subheading">
-    <h1>LSD TUNING DURBAN</h1>
-    <h3>CREATE | INSPIRE | ACHIEVE</h3>
+
+  <div class="main">
+    <h2>Book a Service with Us</h2>
+    <p>Ready to take your vehicle to the next level? Use the form below or WhatsApp us to book a service with LSD Tuning Durban.</p>
+
+    <form class="booking-form" id="bookingForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="service">Select Service:</label>
+      <select id="service" required>
+        <option value="Vehicle Diagnostics">Vehicle Diagnostics</option>
+        <option value="VAG Coding">VAG Coding</option>
+        <option value="Major Service">Major Service</option>
+        <option value="Brake & Clutch Repair">Brake & Clutch Repair</option>
+        <option value="Engine Rebuild">Engine Rebuild</option>
+        <option value="Performance Upgrades">Performance Upgrades</option>
+        <option value="Chiptuning">Chiptuning</option>
+        <option value="ECU Remapping">ECU Remapping</option>
+        <option value="Turbo Installations">Turbo Installations</option>
+        <option value="Mobile Diagnostics (LSD on the Move)">Mobile Diagnostics (LSD on the Move)</option>
+      </select>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" required>
+
+      <input type="submit" value="Submit Booking" class="button">
+    </form>
+
+    <a id="whatsappLink" href="#" target="_blank" class="whatsapp-button" style="display:none;">
+      📲 Send Booking via WhatsApp
+    </a>
+
+    <div class="divider">or</div>
+
+    <p style="text-align: center;">
+      Prefer Google? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeExampleURL/viewform" target="_blank">Book via Google Form</a>
+    </p>
   </div>
-  <div class="menu">
-    <a href="lsdtuningdbn.html">Home</a> | 
-    <a href="services.html">Services</a> | 
-    <a href="about.html">About</a> | 
-    <a href="booking.html">Booking</a> | 
-    <a href="contact.html">Contact</a>
+
+  <div class="footer">
+    <footer>
+      <p>&copy; <span id="year"></span> LSD Tuning Durban. All Rights Reserved.</p>
+      <a href="https://forms.gle/baUaYiXDTPqDgHNa6"
+         target="_blank"
+         class="newsletter-btn">
+        📬 Subscribe to Our Newsletter
+      </a>
+    </footer>
   </div>
-</div>
 
-<div class="main">
-  <h2>Book a Service with Us</h2>
-  <p>Ready to take your vehicle to the next level? Use the form below to book a service with LSD Tuning Durban. We look forward to enhancing your driving experience!</p>
-  
-  <form action="submit_booking.php" method="POST">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required aria-required="true"><br><br>
-    
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required aria-required="true"><br><br>
-    
-    <label for="service">Select Service:</label><br>
-    <select id="service" name="service" required aria-required="true">
-      <option value="diagnostics">Vehicle Diagnostics</option>
-      <option value="vag-coding">VAG Coding</option>
-      <option value="major-service">Major Service</option>
-      <option value="brake-clutch-repair">Brake & Clutch Repair</option>
-      <option value="engine-rebuild">Engine Rebuild</option>
-      <option value="performance-upgrade">Performance Upgrades</option>
-      <option value="chiptuning">Chiptuning</option>
-    </select><br><br>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    <label for="date">Preferred Date:</label><br>
-    <input type="date" id="date" name="date" required aria-required="true"><br><br>
-    
-    <input type="submit" value="Submit Booking" class="button">
-  </form>
-</div>
+    const form = document.getElementById("bookingForm");
+    const whatsappLink = document.getElementById("whatsappLink");
 
-<div class="footer">
-  <p>&copy; <span id="year"></span> - LSD Tuning Durban | Driven By Excellence</p>
-</div>
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const date = document.getElementById("date").value;
 
+      const message = `Hi, I'd like to book a service with LSD Tuning.%0A%0AName: ${name}%0AEmail: ${email}%0AService: ${service}%0APreferred Date: ${date}`;
+      const url = `https://wa.me/27718305852?text=${message}`;
+
+      whatsappLink.href = url;
+      whatsappLink.style.display = "inline-block";
+      whatsappLink.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

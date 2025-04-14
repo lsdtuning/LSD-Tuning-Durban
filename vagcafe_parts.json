@@ -1,0 +1,47 @@
+[
+  {
+    "brand": "Volkswagen",
+    "model": "Golf GTI",
+    "engine": "2.0 TSI",
+    "part_name": "APR Intake Kit",
+    "price": "R4,500",
+    "image": "https://www.vagcafe.com/product/forge-motorsport-fmindmk7-replacement-filter-foam/",
+    "product_link": "https://vagcafe.com/product/apr-intake-golf-gti/"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Polo GTI 6C",
+    "engine": "1.8 TSI",
+    "part_name": "Downpipe",
+    "price": "R3,800",
+    "image": "https://vagcafe.com/wp-content/uploads/2021/05/DOWNPIPE-POLO6C.jpg",
+    "product_link": "https://vagcafe.com/product/downpipe-vw-polo-gti-6c/"
+  },
+  {
+    "brand": "Audi",
+    "model": "A3",
+    "engine": "2.0 TFSI",
+    "part_name": "Coilovers Kit",
+    "price": "R8,200",
+    "image": "https://example.com/images/coilovers.jpg",
+    "product_link": "https://vagcafe.com/product/coilovers-audi-a3/"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Golf 7 GTI",
+    "engine": "2.0 TSI",
+    "part_name": "CTS Turbo Intake Kit",
+    "price": "R4,500",
+    "image": "https://vagcafe.com/wp-content/uploads/2021/01/CTS-INTAKE-GTI7.jpg",
+    "product_link": "https://vagcafe.com/product/cts-turbo-intake-kit-vw-golf-7-gti/"
+  },
+  {
+    "brand": "Audi",
+    "model": "S3 8V",
+    "engine": "2.0 TFSI",
+    "part_name": "Forge Blow Off Valve",
+    "price": "R3,200",
+    "image": "https://vagcafe.com/wp-content/uploads/2020/11/FORGE-BOV-S3.jpg",
+    "product_link": "https://vagcafe.com/product/forge-blow-off-valve-audi-s3-8v/"
+  }
+]
