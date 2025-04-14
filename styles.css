@@ -1,3 +1,26 @@
+/* Social Media Icons Styling */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #0066ff; /* You can set each platform's color here if you want */
+  transform: scale(1.1);
+}
+
 .vag-coding-text {
   margin-top: 4.125rem; /* try 1rem to start, tweak as needed */
 }
