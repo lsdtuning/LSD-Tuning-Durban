@@ -1,4 +1,71 @@
-/* Social Media Icons Styling */
+/* Mobile-first layout */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+  .nav-buttons {
+  flex-direction: row;
+  position: static;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .nav-buttons a {
+  margin: 0 10px;
+  }
+  }
+  
+  /* Make sure the logo and text don't get covered */
+  .logo-section {
+  padding-top: 150px; /* Adjust this value if needed */
+  text-align: center;
+  }
+  
+  /* Base styling */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  gap: 20px;
+  }
+  
+  .nav-btn {
+  background-color: #00bfff; /* bright blue */
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  }
+  
+  .nav-btn:hover {
+  background-color: #009ace;
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 768px) {
+  .nav-buttons {
+  flex-direction: row;
+  position: static;
+  justify-content: center;
+  gap: 15px;
+  }
+  }
+  
+  /* Social Media Icons Styling */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -568,6 +635,207 @@ nav ul li a.active {
   margin: 0 auto;
   padding: 20px;
 }
+
+/* Global Reset and Consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5; /* Light background for consistency */
+  line-height: 1.6;
+}
+
+body.parts-page {
+  background-color: #111; /* Dark theme specifically for the parts page */
+  color: #fff;
+}
+
+header, footer {
+  background-color: #222;
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  color: #00bfff;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #00bfff;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #ddd;
+}
+
+/* Parts Grid */
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.part-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.part-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.part-card .btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.part-card .btn {
+  background-color: #009dff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.part-card .btn:hover {
+  background-color: #007acc;
+}
+
+.btn.whatsapp {
+  background-color: #25D366;
+}
+
+.btn.whatsapp:hover {
+  background-color: #1ebd56;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  color: #aaa;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #222;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #0066ff; /* You can set each platform's color here if you want */
+  transform: scale(1.1);
+}
+
+/* Shared Layouts (Header & Footer Consistency) */
+.header, .footer {
+  background-color: #222;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00bfff;
+}
+
+nav a.active {
+  color: #00bfff;
+}
+
+header nav ul {
+  text-align: center;
+  padding-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure consistent spacing between the page sections */
+section {
+  margin-bottom: 40px;
+}
+
 
 
 
