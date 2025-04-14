@@ -1,74 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parts Catalogue - LSD Tuning Durban</title>
-  <meta name="description" content="Browse high-performance vehicle parts offered by LSD Tuning Durban. View pricing, specs, and links to order now!">
-  <link rel="stylesheet" href="styles.css"> 
-  <style>
-    .step-selector {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-    .step-selector label {
-      font-weight: bold;
-    }
-    .step-selector select {
-      padding: 10px;
-      font-size: 16px;
-      width: 100%;
-      max-width: 300px;
-    }
-    .part-card {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .whatsapp-button {
-      background-color: #25D366;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .whatsapp-button:hover {
-      background-color: #1ebe5d;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performance Parts | LSD Tuning Durban</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <h1>LSD Tuning Durban</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="parts.html" class="active">Parts</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="header">
-  <div class="logo">
-    <img src="images/lsd_tuning.jpg" alt="LSD Tuning Logo"/> 
-  </div>
-  <div class="subheading">
-    <h1>LSD TUNING DURBAN</h1>
-    <h3>CREATE | INSPIRE | ACHIEVE</h3>
-  </div>
-  <div class="menu">
-    <a href="index.html">Home</a> | 
-    <a href="services.html">Services</a> | 
-    <a href="parts.html">Parts</a> | 
-    <a href="booking.html">Booking</a> | 
-    <a href="contact.html">Contact</a>
-  </div>
-</div>
+  <main>
+    <!-- Match your homepage layout -->
+    <div class="container">
+      <section class="hero">
+        <h2>Performance Parts</h2>
+        <p>All your VW & Audi performance parts in one place, powered by VAGCafe.</p>
+      </section>
 
-<div class="main" style="text-align: center; padding: 100px 20px;">
-  <h2>🚧 Parts Catalogue Coming Soon 🚧</h2>
-  <p>We're currently building something amazing here. Please check back soon!</p>
-  <img src="images/under_construction.jpeg" alt="Under Construction" style="max-width: 300px; margin-top: 20px;">
-</div>
+      <section id="parts-list" class="parts-grid">
+        <!-- Dynamic parts will load here -->
+      </section>
+    </div>
+  </main>
 
+  <footer>
+    <p>&copy; 2025 LSD Tuning Durban</p>
+    <p>📞 071 830 5852 | 📍 LSD Tuning Durban | 📸 @lsdtuningdbn</p>
+  </footer>
 
+  <script src="parts.js"></script>
 </body>
 </html>
